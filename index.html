@@ -1,39 +1,135 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Project: Blog</title>
-        <style>
-            body {
-                font-family: sans-serif;
-                font-size: 20px;
-            }
-            h2 {
-                font-family: fantasy;
-            }
-            h6 {
-                font-style: italic;
-            }
-        </style>
-    </head>
-    <body>
-        
-        <h1>Dean's Blog</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Dean Heikkila</title>
+  <link href="https://fonts.googleapis.com/css?family=Gelasio|Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: rgba(230,230,230,1);
+      color: rgba(50,50,50,1);
+      margin: 0 auto;
+    }
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: 'Gelasio', serif;
+      font-size: 80px;
+    }
+    #dean {
+      color: #006600;
+    }
+    #j {
+      color: rgba(100,100,100,1);
+    }
+    .section {
+      background: url(https://i.imgur.com/kYcUXrC.jpg);
+      background-size: cover;
+      width: 220px;
+      margin: 10px;
+      padding: 20px;
+      float: left;
+    }
+    p {
+      border: solid #FFFFFF;
+      font-family: 'Open Sans', sans-serif;
+      background-color: rgba(0,0,0,.5);
+      color: #FFFFFF;
+      padding: 10px;
+      width: 200px;
+    }
+    img {
+      border: solid #FFFFFF;
+      width: 200px;
+    }
+    textarea {
+      font-family: 'Open Sans', sans-serif;
+    }
+    #popup {
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      z-index: 10;
+    }
 
-        <h3>Contents</h3>
-        <ul>
-            <li><a href="#firstpost">First post!</a></li>
-            <li><a href="#update">Update</a></li>
-        </ul>
-        
-        <h2 id="firstpost">First post</h2>
-        <h6>Posted on 12/12/2019</h6>
-        
-        <p>Something excited happened.</p>
-        
-        <h2 id="update">Update</h2>
-        <h6>Posted on 1/1/2020</h6>
-        <p>My life.... yea/p>
-        
-    </body>
-</html>
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1><span id="dean">Dean </span>
+        <span id="j">J. </span>
+        Heikkila</h1>
+    </header>
+
+    <div class="section"><!--picture-->
+      <img src="https://media.licdn.com/dms/image/C4E03AQGFI48FK0dvjA/profile-displayphoto-shrink_200_200/0?e=1583971200&v=beta&t=6Bt5VS0xyb2Iuz3NxSrp115uXmF5_Eq6BrOvgYloKg8" 
+      alt="Dean Heikkila" />
+    </div><!--end picture-->
+
+    <div class="section"><!--About Me-->
+      <p>
+        <strong>About</strong><br />
+        Hi, I'm Dean, an engineering professional in the greater Seattle area. 
+        After growing up in southeastern Idaho, I relocated to Seattle, where 
+        I completed my undergraduate degree in industrial and systems engineering 
+        at University of Washington. Following my graduation, I worked briefly at 
+        an aerospace manufacturing firm. Currently, my focus is transitioning to 
+        web development in the tech industry. 
+      </p>
+    </div><!--end about me-->
+      
+    <div class="section"><!--Contact-->
+      <p>
+        <strong>Contact info:</strong><br />
+        208-589-9118<br />
+        deanjheikkila@gmail.com<br />
+        328 NE 52nd St, Seattle, WA, 98105
+      </p>
+    </div><!--End Contact-->
+
+    <div class="section"><!--form-->
+      <form action="" method="get">
+        <p>
+          <strong>Contact now!</strong><br />
+          Who are you? 
+          <select>
+            <option value="employer">Employer</option>
+            <option value="education">Education Professional</option>
+            <option value="job-seeker">Job Seeker</option>
+            <option value="friend">Friend</option>
+          </select><br />
+          Name: 
+          <input type="text" /><br />
+          Email: 
+          <input type="email" /><br />
+          Message:
+          <textarea rows="4" cols="25">Say hello</textarea>
+          <input id="submitButton" type="submit" value="Submit"/>
+        </p>
+      </form>
+    </div><!--end form-->
+
+  </div><!--end wrapper-->
+  
+  <div id="popup" onclick="clearMessage()">
+    <p><strong>Welcome!</strong><br />
+        Click to dismiss</p>
+  </div>
+  
+  <script>
+    /*function showPopup() {  
+      document.getElementById('popup').style.visibilty = "visible";
+    }*/
+    function clearMessage() {
+      document.getElementById('popup').style.visibility = "hidden";
+    }
+  </script>
+</body>

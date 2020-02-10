@@ -1,4 +1,5 @@
 # dean-hei.github.io
 "About Me" website
 
-Link: dean-hei.github.io
+Access here:
+https://dean-hei.github.io/
